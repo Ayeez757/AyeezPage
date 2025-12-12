@@ -8,7 +8,7 @@ html,
         /* 背景图：cover 会保持比例并裁剪以覆盖整个可视区 */
         body.site-bg {
             min-height: 100vh;
-            background-image: url('../imgs/bg/bg.jpg');
+            background-image: url('../imgs/bg/p3.jpg');
             /* <-- 改成你的图片路径 */
             background-size: cover;
             background-position: center center;
@@ -68,7 +68,7 @@ html,
             position: relative;
             margin-left: 20%;
             margin-top: 5rem;
-            margin-right: 1rem;
+            /* margin-right: 1rem; */
             width: 150px;
             height: 150px;
             border-radius: 50%;

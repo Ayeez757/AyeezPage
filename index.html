@@ -443,16 +443,16 @@
                     <div class="reward-main coin-reward-main" id="coin-reward-main">
                         <ul class="reward-all">
                             <li class="reward-item">
-                                <a href="https://blog.ayeez.cn/imgs/infoOfMe/wechatReward.jpg" target="_blank">
+                                <a href="https://qiniu.ayeez.cn/20260413104507088.jpg" target="_blank">
                                     <img class="post-qr-code-img"
-                                        src="https://blog.ayeez.cn/imgs/infoOfMe/wechatReward.jpg" alt="微信">
+                                        src="https://qiniu.ayeez.cn/20260413104507088.jpg" alt="微信">
                                 </a>
                                 <div class="post-qr-code-desc">微信</div>
                             </li>
                             <li class="reward-item">
-                                <a href="https://blog.ayeez.cn/imgs/infoOfMe/alipayReward.jpg" target="_blank">
+                                <a href="https://qiniu.ayeez.cn/20260413104510748.jpg" target="_blank">
                                     <img class="post-qr-code-img"
-                                        src="https://blog.ayeez.cn/imgs/infoOfMe/alipayReward.jpg" alt="支付宝">
+                                        src="https://qiniu.ayeez.cn/20260413104510748.jpg" alt="支付宝">
                                 </a>
                                 <div class="post-qr-code-desc">支付宝</div>
                             </li>
@@ -781,161 +781,126 @@
 
 
 
-        // 追番轮播图脚本
+        // 追番轮播：数据来自博客 about 页同源接口
         document.addEventListener('DOMContentLoaded', function () {
-            // 图片资源数组
-            const images = [
-                "../../imgs/anime/p3.png",
-                "../../imgs/anime/p4.jpeg",
-                "../../imgs/anime/p5.jpg",
-                "../../imgs/anime/p6.jpg",
-                "../../imgs/anime/p7.jpg",
-                "../../imgs/anime/p8.jpg",
-                "../../imgs/anime/p9.png",
-                "../../imgs/anime/p10.jpg",
-                "../../imgs/anime/p17.jpg",
-                "../../imgs/anime/p18.jpg",
-                "../../imgs/anime/p19.jpg",
-                "../../imgs/anime/p1.jpg",
-                "../../imgs/anime/p2.jpg",
-                "../../imgs/anime/p11.jpeg",
-                "../../imgs/anime/p12.jpg",
-                "../../imgs/anime/p13.jpg",
-                "../../imgs/anime/p14.jpg",
-                "../../imgs/anime/p15.jpg",
-                "../../imgs/anime/p16.jpg",
-                "../../imgs/anime/p17.jpg",
-                "../../imgs/anime/p18.jpg",
-                "../../imgs/anime/p19.jpg",
-                "../../imgs/anime/p20.jpg",
-                "../../imgs/anime/p21.jpg",
-                "../../imgs/anime/p22.jpg",
-                "../../imgs/anime/p23.jpg",
-                "../../imgs/anime/p24.jpg",
-                "../../imgs/anime/p25.jpg",
-                "../../imgs/anime/p26.jpg",
-                "../../imgs/anime/p27.jpg",
-                "../../imgs/anime/p28.jpg",
-                "../../imgs/anime/p29.jpg",
-                "../../imgs/anime/p30.jpg",
-                "../../imgs/anime/p31.jpg",
-                "../../imgs/anime/p32.jpg",
-                "../../imgs/anime/p33.jpg",
-                "../../imgs/anime/p34.jpg",
-                "../../imgs/anime/p35.jpg",
-                "../../imgs/anime/p36.jpg",
-                "../../imgs/anime/p37.jpg",
-                "../../imgs/anime/p38.jpg",
-                "../../imgs/anime/p39.jpg",
-                "../../imgs/anime/p40.jpg",
-                "../../imgs/anime/p41.jpg",
-                "../../imgs/anime/p42.jpg",
-                "../../imgs/anime/p43.jpg",
-            ];
-
+            const ANIME_LIST_API = 'https://blog.ayeez.cn/api/about/anime/list';
             const box = document.getElementById('animeBox');
+            const boxFather = document.querySelector('.box-father');
+            if (!box || !boxFather) return;
 
-            // 动态创建图片元素并添加到轮播容器中
-            for (let i = 0; i < images.length; i++) {
-                let div = document.createElement("div");
-                div.className = "box-item";
+            function buildItem(entry, index) {
+                const div = document.createElement('div');
+                div.className = 'box-item';
 
-                let img = document.createElement("img");
-                img.src = images[i];
-                img.alt = `图片 ${i + 1}`;
+                const img = document.createElement('img');
+                img.src = entry.imageUrl;
+                img.alt = entry.title || ('追番 ' + (index + 1));
+                img.loading = 'lazy';
+                img.decoding = 'async';
+                img.style.width = '100%';
+                img.style.height = '100%';
+                img.style.objectFit = 'cover';
+                img.style.borderRadius = 'inherit';
 
-                img.style.width = "100%";
-                img.style.height = "100%";
-                img.style.objectFit = "cover";
-                img.style.borderRadius = "inherit";
-
-                div.appendChild(img);
-                box.appendChild(div);
-            }
-
-            // 获取轮播图父容器元素
-            const boxFather = document.querySelector(".box-father");
-
-            // 添加鼠标滚轮事件监听器，防止页面滚动与轮播冲突
-            boxFather.addEventListener("wheel", function (event) {
-                event.preventDefault();
-            }, { passive: false });
-
-            // 向前移动一张图片的函数
-            function moveNext() {
-                let items = document.querySelectorAll(".box-item");
-                if (items.length > 0) {
-                    box.appendChild(items[0]);
+                if (entry.linkUrl) {
+                    const a = document.createElement('a');
+                    a.href = entry.linkUrl;
+                    a.target = '_blank';
+                    a.rel = 'noopener noreferrer';
+                    a.title = entry.title || '';
+                    a.style.display = 'block';
+                    a.style.width = '100%';
+                    a.style.height = '100%';
+                    a.appendChild(img);
+                    div.appendChild(a);
+                } else {
+                    div.appendChild(img);
                 }
+
+                return div;
             }
 
-            // 向后移动一张图片的函数
-            function movePrev() {
-                let items = document.querySelectorAll(".box-item");
-                if (items.length > 0) {
-                    box.prepend(items[items.length - 1]);
+            function attachCarouselControls() {
+                function moveNext() {
+                    const items = box.querySelectorAll('.box-item');
+                    if (items.length > 0) box.appendChild(items[0]);
                 }
-            }
+                function movePrev() {
+                    const items = box.querySelectorAll('.box-item');
+                    if (items.length > 0) box.prepend(items[items.length - 1]);
+                }
 
-            // PC端滚轮事件处理
-            window.addEventListener("wheel", function (event) {
-                if (boxFather.contains(event.target)) {
-                    if (event.deltaY > 0) {
-                        moveNext();
-                    } else {
-                        movePrev();
-                    }
+                boxFather.addEventListener('wheel', function (event) {
                     event.preventDefault();
-                }
-            }, { passive: false });
+                }, { passive: false });
 
-            // 移动端触摸滑动支持
-            let touchStartX = 0;
-            let touchStartY = 0;
-            let isTouching = false;
-
-            // 触摸开始事件处理
-            boxFather.addEventListener("touchstart", function (event) {
-                touchStartX = event.touches[0].clientX;
-                touchStartY = event.touches[0].clientY;
-                isTouching = true;
-            }, { passive: true });
-
-            // 触摸移动事件处理
-            boxFather.addEventListener("touchmove", function (event) {
-                if (!isTouching) return;
-
-                const touchEndX = event.touches[0].clientX;
-                const touchEndY = event.touches[0].clientY;
-
-                const diffX = touchStartX - touchEndX;
-                const diffY = touchStartY - touchEndY;
-
-                if (Math.abs(diffX) > Math.abs(diffY)) {
+                window.addEventListener('wheel', function (event) {
+                    if (!boxFather.contains(event.target)) return;
+                    if (event.deltaY > 0) moveNext();
+                    else movePrev();
                     event.preventDefault();
-                }
-            }, { passive: false });
+                }, { passive: false });
 
-            // 触摸结束事件处理
-            boxFather.addEventListener("touchend", function (event) {
-                if (!isTouching) return;
+                let touchStartX = 0;
+                let touchStartY = 0;
+                let isTouching = false;
 
-                const touchEndX = event.changedTouches[0].clientX;
-                const touchEndY = event.changedTouches[0].clientY;
+                boxFather.addEventListener('touchstart', function (event) {
+                    touchStartX = event.touches[0].clientX;
+                    touchStartY = event.touches[0].clientY;
+                    isTouching = true;
+                }, { passive: true });
 
-                const diffX = touchStartX - touchEndX;
-                const diffY = touchStartY - touchEndY;
+                boxFather.addEventListener('touchmove', function (event) {
+                    if (!isTouching) return;
+                    const touchEndX = event.touches[0].clientX;
+                    const touchEndY = event.touches[0].clientY;
+                    const diffX = touchStartX - touchEndX;
+                    const diffY = touchStartY - touchEndY;
+                    if (Math.abs(diffX) > Math.abs(diffY)) event.preventDefault();
+                }, { passive: false });
 
-                if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
-                    if (diffX > 0) {
-                        moveNext();
-                    } else {
-                        movePrev();
+                boxFather.addEventListener('touchend', function (event) {
+                    if (!isTouching) return;
+                    const touchEndX = event.changedTouches[0].clientX;
+                    const touchEndY = event.changedTouches[0].clientY;
+                    const diffX = touchStartX - touchEndX;
+                    const diffY = touchStartY - touchEndY;
+                    if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+                        if (diffX > 0) moveNext();
+                        else movePrev();
                     }
-                }
+                    isTouching = false;
+                });
+            }
 
-                isTouching = false;
-            });
+            fetch(ANIME_LIST_API, { method: 'GET', credentials: 'omit' })
+                .then(function (res) {
+                    if (!res.ok) throw new Error('HTTP ' + res.status);
+                    return res.json();
+                })
+                .then(function (body) {
+                    const raw = (body && body.data) || [];
+                    const list = raw
+                        .filter(function (x) { return x && x.imageUrl; })
+                        .sort(function (a, b) {
+                            return (a.sort != null ? a.sort : 0) - (b.sort != null ? b.sort : 0);
+                        });
+
+                    if (list.length === 0) {
+                        box.innerHTML = '<p class="anime-empty-hint" style="padding:1rem;text-align:center;color:#666;">暂无追番数据</p>';
+                        return;
+                    }
+
+                    list.forEach(function (entry, index) {
+                        box.appendChild(buildItem(entry, index));
+                    });
+                    attachCarouselControls();
+                })
+                .catch(function (err) {
+                    console.error('追番列表加载失败:', err);
+                    box.innerHTML = '<p class="anime-empty-hint" style="padding:1rem;text-align:center;color:#666;">追番列表加载失败，请稍后再试（需允许跨域访问博客接口）。</p>';
+                });
         });
     </script>
 </body>

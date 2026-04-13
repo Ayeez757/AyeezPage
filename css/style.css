@@ -276,6 +276,240 @@ html,
             line-height: 1.6;
         }
 
+        .skills-brief {
+            margin: 0.5rem 0 0;
+            padding-left: 1.25rem;
+            line-height: 1.65;
+        }
+
+        .skills-brief li {
+            margin-bottom: 0.35rem;
+        }
+
+        .wakatime-heading {
+            margin: 1.25rem 0 0.35rem;
+            font-size: 1.1rem;
+        }
+
+        .wakatime-note {
+            margin: 0 0 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .profile-card {
+            margin: 2rem 10%;
+            padding: 0;
+            background: rgba(255, 255, 255, 0.88);
+            border: 1px solid rgba(31, 35, 40, 0.12);
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(31, 35, 40, 0.08);
+            overflow: hidden;
+        }
+
+        .profile-card-inner {
+            padding: 1.5rem 1.75rem 1.6rem;
+        }
+
+        .profile-line {
+            margin: 0 0 0.85rem;
+            line-height: 1.65;
+            font-size: 1rem;
+            color: #1f2328;
+        }
+
+        .profile-line--hello {
+            font-size: 1.15rem;
+        }
+
+        .profile-line--casual {
+            color: #57606a;
+            font-size: 0.95rem;
+        }
+
+        .profile-line code {
+            padding: 0.12rem 0.4rem;
+            font-size: 0.9em;
+            border-radius: 6px;
+            background: rgba(175, 184, 193, 0.2);
+        }
+
+        .profile-quicklinks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0 0.25rem;
+        }
+
+        .profile-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.4rem 0.85rem;
+            font-size: 0.9rem;
+            color: #0969da;
+            text-decoration: none;
+            border: 1px solid #d0d7de;
+            border-radius: 2rem;
+            background: #f6f8fa;
+            transition: background 0.15s ease, border-color 0.15s ease;
+        }
+
+        .profile-pill:hover {
+            background: #eaeef2;
+            border-color: #afb8c1;
+        }
+
+        .profile-wakatime-caption {
+            margin: 1.25rem 0 0.4rem;
+            font-size: 0.8rem;
+            color: #57606a;
+        }
+
+        .profile-wakatime-badge {
+            display: inline-block;
+            line-height: 0;
+        }
+
+        .profile-wakatime-badge img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .projects-section-title {
+            text-align: center;
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin: 0 0 0.35rem;
+            color: #1f2328;
+        }
+
+        .projects-pin-icon {
+            margin-right: 0.35rem;
+            color: #656d76;
+            font-size: 0.95em;
+        }
+
+        .projects-section-lead {
+            text-align: center;
+            margin: 0 0 1rem;
+            font-size: 0.9rem;
+            color: #57606a;
+        }
+
+        .project-blurb {
+            margin: 0.5rem 0 0;
+            font-size: 0.92rem;
+            line-height: 1.55;
+            color: #444;
+        }
+
+        .project-card-link--gh {
+            background: linear-gradient(135deg, #24292f, #1a1e22);
+            box-shadow: 0 2px 8px rgba(36, 41, 47, 0.35);
+        }
+
+        .project-card-link--gh:hover {
+            box-shadow: 0 4px 12px rgba(36, 41, 47, 0.45);
+        }
+
+        .social-section-lead {
+            text-align: center;
+            margin: -0.25rem 0 0.75rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .projects-section {
+            margin: 2rem 10%;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .projects-section .project-card h2 {
+            margin: 0 0 0.35rem;
+            font-size: 1.25rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1rem;
+        }
+
+        .project-card {
+            margin: 0;
+            padding: 1.25rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid rgba(0, 0, 0, 0.07);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+            box-sizing: border-box;
+        }
+
+        .project-meta {
+            margin: 0 0 0.6rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .project-highlights {
+            margin: 0.5rem 0 0;
+            padding-left: 1.25rem;
+            line-height: 1.65;
+        }
+
+        .project-highlights li {
+            margin-bottom: 0.35rem;
+        }
+
+        .project-card-hint {
+            margin: 1rem 0 0;
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        .project-card-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+
+        .project-card-link {
+            display: inline-block;
+            padding: 0.45rem 0.9rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            color: #fff;
+            background: linear-gradient(135deg, #5c6bc0, #3949ab);
+            box-shadow: 0 2px 8px rgba(57, 73, 171, 0.35);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .project-card-link:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(57, 73, 171, 0.45);
+        }
+
+        .project-card-link:focus-visible {
+            outline: 2px solid #3949ab;
+            outline-offset: 2px;
+        }
+
+        .footer-contact-line {
+            margin: 0.25rem 0 0.5rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .footer-contact-line a {
+            color: inherit;
+        }
+
         /* 手写风格标题 - 逐字出现动画 */
         .name-section {
             text-align: start;

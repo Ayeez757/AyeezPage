@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>阿叶Ayeez的个人主页</title>
     <link rel="icon" type="image/svg+xml" href="/imgs/icon/avatar.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/night.css">
@@ -23,8 +22,9 @@
             <header class="header-navbar">
                 <a href="#" class="logo">阿叶Ayeez</a>
                 <nav class="nav-links">
-                    <a href="https://blog.ayeez.cn/" target="_blank">博客blog</a>
-                    <a href="https://GitHub.com/Ayeez757" target="_blank">GitHub</a>
+                    <a href="https://blog.ayeez.cn/" target="_blank">博客</a>
+                    <a href="https://blog.ayeez.cn/about" target="_blank">关于</a>
+                    <a href="https://github.com/Ayeez757" target="_blank">GitHub</a>
                     <!-- <div class="lamp-container">
                         <div class="lamp-cord"></div>
                         <div class="lamp-holder">
@@ -38,13 +38,12 @@
             <div class="about-section">
                 <img src="./imgs/icon/avatar.png" alt="头像" id="about-avatar" />
                 <div class="tags-container">
-                    <span class="about-tag">#大一软件工程学生</span>
-                    <span class="about-tag">#热衷于开发</span>
+                    <span class="about-tag">#Java</span>
+                    <span class="about-tag">#25级大一软工在读</span>
+                    <span class="about-tag">#瞎折腾</span>
+                    <span class="about-tag">#开源</span>
                     <span class="about-tag">#高级cv工程师</span>
-                    <span class="about-tag">#喜欢瞎折腾的傻子</span>
-                    <span class="about-tag">#喜欢体验各种事物</span>
-                    <span class="about-tag">#励志成为大佬</span>
-                    <span class="about-tag">#Minecraft</span>
+                    <span class="about-tag">#探索中…</span>
                 </div>
             </div>
 
@@ -53,68 +52,80 @@
                 <h2 class="subtitle" id="animatedSubtitle"></h2>
             </div>
 
-            <div class="personal-info">
-                <h1>个人简介</h1>
-                <ul class="info-list">
-                    <li><strong>很高兴认识你</strong></li>
-                    <li>25级软件工程在读大学生(大一)</li>
-                    <li>热爱计算机(喜欢全栈)，记录自己的学习历程</li>
-                    <li>喜欢瞎折腾的小趴菜，有众多自己的业余爱好</li>
-                    <li>
-                        例如：
-                        <span class="hobbies">
-                            画画，弹钢琴，做饭，乒乓球，中长跑，排球，我的世界（游戏），
-                            中式建筑，生电（我的世界），魔方，骑行，桌球，国际象棋，
-                            摄影，手工木作，股市赌狗，发射器玩具，喝茶，写博客等
-                        </span>
-                    </li>
-                    <li><strong>一些奇怪的技能：</strong>双手都能写字......</li>
-                    <li>
-                        <strong>技术栈:</strong>
-                        <span class="tech-stack">
-                            Java、html、css、git、docker、linus、astro、MySQL、Springboot、Maven、Ajax、JDBC、mybatis、log4j、sl4j、nginx、uniapp、elementplus、GitHub Action
-                        </span>           
-                    </li>
-                    <li>
-                        <strong>涉及:</strong>
-                        <span class="involved"> c、c++、python、javascript、vue、logback、MongoDB、Ajax、axios</span>
-                    </li>
-                    <li><strong>IP:</strong> 广东</li>
+            <section class="profile-card" aria-label="主页介绍">
+                <div class="profile-card-inner">
+                    <p class="profile-line profile-line--hello">Hi，我是 <strong>阿叶Ayeez</strong>。</p>
+                    <p class="profile-line">
+                        Java 为主，对架构 / 性能 / 运维感兴趣，探索中...；
+                    </p>
+                    <p class="profile-line">
+                        <strong>技术栈：</strong>Java、SpringBoot、MyBatis、MySQL、Redis、RabbitMQ、MQTT、Netty、WebSocket、Docker、K8s、HPA、Prometheus、Grafana、ELK、Nginx、CI/CD、Linux、JMeter 等。
+                    </p>
+                    <p class="profile-line profile-line--casual">
+                        业余 画画，弹钢琴，做饭，乒乓球，中长跑，排球，我的世界（游戏），中式建筑，生电（我的世界），魔方，骑行，桌球，国际象棋， 摄影，手工木作，股市赌狗，编织，喝茶，写博客等。
+                    </p>
+                    <div class="profile-quicklinks" role="list">
+                        <a class="profile-pill" href="https://github.com/Ayeez757" target="_blank" rel="noopener" role="listitem">
+                            <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                        </a>
+                        <a class="profile-pill" href="https://blog.ayeez.cn/" target="_blank" rel="noopener" role="listitem">
+                            <i class="fa fa-blog" aria-hidden="true"></i> blog.ayeez.cn
+                        </a>
+                        <a class="profile-pill" href="https://ayeez.cn" target="_blank" rel="noopener" role="listitem">
+                            <i class="fas fa-link" aria-hidden="true"></i> ayeez.cn
+                        </a>
+                        <a class="profile-pill" href="mailto:leaf@ayeez.cn" role="listitem">
+                            <i class="fas fa-envelope" aria-hidden="true"></i> leaf@ayeez.cn
+                        </a>
+                    </div>
+                    <p class="profile-wakatime-caption">Coding time（图一乐统计）</p>
+                    <a class="profile-wakatime-badge" href="https://wakatime.com" target="_blank" rel="noopener">
+                        <img src="https://wakatime.com/badge/user/923b7fe9-128b-4a46-b1d9-d4494ac957da.svg"
+                            alt="WakaTime 本周语言统计" width="240" height="28">
+                    </a>
+                </div>
+            </section>
 
-
-
-
-
-                    <h3>完全不完全统计：<h3>
-                            <!-- <img src="https://raw.githubusercontent.com/Ayeez757/Ayeez757/main/images/wakatime_weekly_language_stats.svg"
-                                style="object-fit: cover;max-width: 100%;">
-                            <img src="https://raw.githubusercontent.com/Ayeez757/Ayeez757/main/images/wakatime_weekly_project_stats.svg"
-                                style="object-fit: cover;max-width: 100%;"> -->
-
-                            语言使用时间：
-                            <br>
-
-                            <img src="https://wakatime.com/badge/user/923b7fe9-128b-4a46-b1d9-d4494ac957da.svg"
-                                style="object-fit: cover;max-width: 100%;" alt="oh no~图片被墙了">
-                            <br>
-                            <img src="https://github-readme-stats-fast.vercel.app/api/wakatime?username=Ayeez757"
-                                style="object-fit: cover;max-width: 100%;" alt="oh no~图片被墙了">
-                            <img src="https://github-readme-stats-fast.vercel.app/api/wakatime?username=Ayeez757&cache_seconds=1800&layout=compact"
-                                style="object-fit: cover;max-width: 100%;" alt="oh no~图片被墙了">
-
-                            <!-- 
-                            ![Harlok's WakaTime stats]()
-
-                            ![Harlok's WakaTime
-                            stats]()(https://github.com/Pranesh-2005/github-readme-stats-fast) -->
-                </ul>
+            <div class="projects-section">
+                <h1 class="projects-section-title"><i class="fas fa-thumbtack projects-pin-icon" aria-hidden="true"></i> Pinned</h1>
+                <p class="projects-section-lead">最近在挖坑的地方。</p>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <h2>校园易取通</h2>
+                        <p class="project-meta">ESP32 + Spring Boot · IoT / MQTT · 柜端联动</p>
+                        <p class="project-blurb">基于 ESP32 与 Spring Boot 3 的智能柜物联网综合服务平台，MQTT + HTTP 混合通信，联动硬件与业务：外卖暂存、应急物资共享、二手流转等。</p>
+                        <p class="project-card-hint">暂无公开仓库</p>
+                    </article>
+                    <article class="project-card">
+                        <h2>校园论坛</h2>
+                        <p class="project-meta">Spring Boot · ES · Netty · 缓存与削峰</p>
+                        <p class="project-blurb">面向高并发的社交平台：多级缓存与异步削峰，Elasticsearch 检索，Netty + WebSocket 长连接实时推送。</p>
+                        <p class="project-card-hint">暂无公开仓库</p>
+                    </article>
+                    <article class="project-card">
+                        <h2>AyeezBlog</h2>
+                        <p class="project-meta">Public · 个人博客系统</p>
+                        <p class="project-blurb">个人技术沙箱，用于快速试验新技术并打磨阅读与写作体验。</p>
+                        <div class="project-card-actions">
+                            <a class="project-card-link" href="https://blog.ayeez.cn/" target="_blank" rel="noopener">站点</a>
+                            <a class="project-card-link project-card-link--gh" href="https://github.com/Ayeez757/AyeezBlog" target="_blank" rel="noopener">GitHub</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <h2>其它</h2>
+                        <p class="project-meta">金融科技 · 迎新智能体 …</p>
+                        <p class="project-blurb">更多碎片在 GitHub 动态和博客里随缘更新。</p>
+                        <p class="project-card-hint">暂无集中入口</p>
+                    </article>
+                </div>
             </div>
 
             <div class="blank"></div>
 
             <div class="social">
 
-                <h1 style="text-align: center;">我的一些社交账号</h1>
+                <h1 style="text-align: center;">Elsewhere</h1>
+                <p class="social-section-lead">还在这些地方出没</p>
                 <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 10px; justify-content: center;">
                     <!-- 博客 -->
                     <a href="https://blog.ayeez.cn/" target="_blank" style="text-decoration: none;">
@@ -175,8 +186,8 @@
                         </div>
                     </a>
 
-                    <!-- 邮箱 -->
-                    <a href="mailto:ayeez757@gmail.com" style="text-decoration: none;">
+                    <!-- 邮箱（GitHub README 公示） -->
+                    <a href="mailto:leaf@ayeez.cn" style="text-decoration: none;">
                         <div class="social-button" style="background: linear-gradient(45deg, #4285f4, #3367d6);">
                             <i class="fas fa-envelope social-icon"></i>
                             <span>邮箱</span>
@@ -190,7 +201,7 @@
 
 
             <div class="tech-stack-section">
-                <h1 style="text-align: center;">我的技术栈</h1>
+                <h1 style="text-align: center;">Languages &amp; tools</h1>
                 <div class="tech-icons-container">
                     <!-- 第一排图标 - 向右移动 -->
 
@@ -490,20 +501,26 @@
         <footer class="page-footer">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>联系我</h3>
+                    <h3>Contact</h3>
+                    <p class="footer-contact-line">QQ 水友群：421300955（二维码见博客）</p>
+                    <p class="footer-contact-line">
+                        <a href="mailto:leaf@ayeez.cn">leaf@ayeez.cn</a>
+                        ·
+                        <a href="mailto:3406608593@qq.com">3406608593@qq.com</a>
+                    </p>
                     <div class="footer-social-icons">
                         <a href="https://blog.ayeez.cn/imgs/infoOfMe/qqq.jpg" target="_blank" title="QQ群">
                             <i class="fab fa-qq"></i>
                         </a>
-                        <a href="mailto:ayeez757@gmail.com" title="邮箱">
+                        <a href="mailto:leaf@ayeez.cn" title="邮箱 leaf@ayeez.cn">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h3>社交账号</h3>
+                    <h3>Social</h3>
                     <div class="footer-social-icons">
-                        <a href="blog.ayeez.cn" target="_blank" title="博客">
+                        <a href="https://blog.ayeez.cn/" target="_blank" title="博客">
                             <i class="fa fa-blog"></i>
                         </a>
                         <a href="https://github.com/Ayeez757" target="_blank" title="GitHub">
@@ -534,7 +551,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 阿叶Ayeez的 | 备案号: <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2025505813号</a>
+                <p>&copy; 2026 阿叶Ayeez | 备案号: <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2025505813号</a>
                 </p>
             </div>
         </footer>
@@ -601,8 +618,8 @@
         });
 
         // 添加标题文字内容和逐字动画
-        const titleText = "我叫阿叶Ayeez";
-        const subtitleText = "很高兴认识你Hi~ o(*￣▽￣*)ブ";
+        const titleText = "阿叶Ayeez";
+        const subtitleText = "Java | 架构/性能/运维探索中";
 
         const titleElement = document.getElementById("animatedTitle");
         const subtitleElement = document.getElementById("animatedSubtitle");

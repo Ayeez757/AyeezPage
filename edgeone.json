@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://blog.ayeez.cn/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.html",
+      "destination": "https://blog.ayeez.cn/",
+      "statusCode": 301
+    }
+  ]
+}
